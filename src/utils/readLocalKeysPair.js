@@ -1,6 +1,12 @@
 import { peerIdFromKeys } from "@libp2p/peer-id"
 import { readFileSync } from 'fs'
+import path from "path"
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+
+// 👇️ "/home/john/Desktop/javascript"
+const __dirname = path.dirname(__filename);
 
 /**
  * 读取pubkey、prikey
@@ -9,9 +15,10 @@ import { readFileSync } from 'fs'
  * @param {Uint8Array} prikey
  */
 export async function generatePeeridByreadKey () {
+    console.log(path.dirname(__dirname))
 
-    const prikey = readFileSync('../peerid-pri.bin')
-    const pubkey = readFileSync('../peerid-pub.bin')
+    const prikey = readFileSync(`${path.dirname(__dirname)}/peerid-pri.bin`)
+    const pubkey = readFileSync(`${path.dirname(__dirname)}/peerid-pub.bin`)
     const peerId = await peerIdFromKeys(pubkey, prikey)
     if (!pubkey || !prikey) throw Error('Please check key!')
     return await peerIdFromKeys(pubkey, prikey)
