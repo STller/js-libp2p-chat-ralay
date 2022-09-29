@@ -1,0 +1,33 @@
+{
+  "name": "libp2p-caht",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chainsafe/libp2p-noise": "^8.0.1",
+    "@libp2p/bootstrap": "^2.0.0",
+    "@libp2p/kad-dht": "^3.0.5",
+    "@libp2p/mdns": "^3.0.0",
+    "@libp2p/mplex": "^5.2.2",
+    "@libp2p/peer-id": "^1.1.15",
+    "@libp2p/peer-id-factory": "^1.0.18",
+    "@libp2p/tcp": "^3.1.0",
+    "@libp2p/websockets": "^3.0.3",
+    "@multiformats/multiaddr": "^10.5.0",
+    "@nodeutils/defaults-deep": "^1.1.0",
+    "it-length-prefixed": "^8.0.2",
+    "it-map": "^1.0.6",
+    "it-pipe": "^2.0.4",
+    "it-to-buffer": "^2.0.2",
+    "libp2p": "^0.39.1",
+    "multiaddr": "^10.0.1",
+    "uint8arrays": "^3.1.0"
+  },
+  "keywords": [],
+  "type": "module",
+  "description": ""
+}
