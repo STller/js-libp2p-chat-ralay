@@ -10,8 +10,8 @@ import { readFileSync } from 'fs'
  */
 export async function generatePeeridByreadKey () {
 
-    const prikey = readFileSync('peerid-pri.bin')
-    const pubkey = readFileSync('peerid-pub.bin')
+    const prikey = readFileSync('../peerid-pri.bin')
+    const pubkey = readFileSync('../peerid-pub.bin')
     const peerId = await peerIdFromKeys(pubkey, prikey)
     if (!pubkey || !prikey) throw Error('Please check key!')
     return await peerIdFromKeys(pubkey, prikey)
