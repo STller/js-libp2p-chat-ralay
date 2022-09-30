@@ -15,8 +15,6 @@ const __dirname = path.dirname(__filename);
  * @param {Uint8Array} prikey
  */
 export async function generatePeeridByreadKey () {
-    console.log(path.dirname(__dirname))
-
     const prikey = readFileSync(`${path.dirname(__dirname)}/peerid-pri.bin`)
     const pubkey = readFileSync(`${path.dirname(__dirname)}/peerid-pub.bin`)
     const peerId = await peerIdFromKeys(pubkey, prikey)
