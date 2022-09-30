@@ -42,6 +42,14 @@ const node1 = await createNode()
 //     createNode(peerid),
 // ])
 
+// node1.getMultiaddrs().forEach((ma)=>console.log(`Multiaddr: ${ma}`))
+node1.addEventListener('peer:discovery', (peer) => {
+    console.log('Discovered:', peer.detail.id.toString())
+})
+node1.connectionManager.addEventListener('peer:connect', async (conn) => {
+    console.log(`Connected :${conn.detail.remoteAddr}`)
+})
+
 console.log('before start')
 await node1.start()
 console.log('after start')
@@ -50,13 +58,6 @@ console.log('after start')
 // ])
 
 
-// node1.getMultiaddrs().forEach((ma)=>console.log(`Multiaddr: ${ma}`))
-node1.addEventListener('peer:discovery', (peer) => {
-    console.log('Discovered:', peer.detail.id.toString())
-})
-node1.connectionManager.addEventListener('peer:connect', async (conn) => {
-    console.log(`Connected :${conn.detail.remoteAddr}`)
-})
 
 // console.log(`Stream peerid: ${multiaddr(bootPeerid[0])}`)
 // try {
