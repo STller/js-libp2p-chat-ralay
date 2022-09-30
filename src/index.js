@@ -51,22 +51,22 @@ node1.connectionManager.addEventListener('peer:connect', async (conn) => {
 })
 
 console.log('before start')
-await node1.start()
 console.log('after start')
 // await Promise.all([
-//     node1.start()
-// ])
-
-
-
-// console.log(`Stream peerid: ${multiaddr(bootPeerid[0])}`)
-// try {
-    // const stream = await node1.dialProtocol(multiaddr(bootPeerid[0]),'/chat/1.0.0')
-    // console.log(`Stream: ${stream}`)
-    // stdinToStream(stream)
-    // streamToConsole(stream)
-// } catch (error) {
-//     console.log(error)
-// }
-// node1.dial(multiaddr(bootPeerid[0]))
-// node1.getPeers().forEach((peer) => console.log(peer))
+    //     node1.start()
+    // ])
+    
+    
+    
+    // console.log(`Stream peerid: ${multiaddr(bootPeerid[0])}`)
+    // try {
+        // const stream = await node1.dialProtocol(multiaddr(bootPeerid[0]),'/chat/1.0.0')
+        // console.log(`Stream: ${stream}`)
+        // stdinToStream(stream)
+        // streamToConsole(stream)
+        // } catch (error) {
+            //     console.log(error)
+            // }
+            // node1.dial(multiaddr(bootPeerid[0]))
+            // node1.getPeers().forEach((peer) => console.log(peer))
+await node1.start()
