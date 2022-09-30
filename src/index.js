@@ -16,6 +16,7 @@ import { multiaddr } from 'multiaddr'
 
 const createNode = async () => {
     const peerid = await generatePeeridByreadKey()
+    console.log(peerid)
     return createLibp2p({
         peerId: peerid,
         addresses: {
@@ -45,8 +46,6 @@ const node1 = await createNode()
 await Promise.all([
     node1.start(),
 ])
-
-console.log('run')
 
 node1.getMultiaddrs().forEach((ma)=>console.log(`Multiaddr: ${ma}`))
 node1.addEventListener('peer:discovery', (peer) => {
