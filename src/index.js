@@ -48,7 +48,7 @@ await Promise.all([
 
 node1.getMultiaddrs().forEach((ma)=>console.log(`Multiaddr: ${ma}`))
 node1.addEventListener('peer:discovery', (peer) => {
-    console.log('Discovered:', peer.detail.multiaddrs)
+    console.log('Discovered:', peer.detail.id)
 })
 node1.connectionManager.addEventListener('peer:connect', async (conn) => {
     console.log(`Connected :${conn.detail.remoteAddr}`)
