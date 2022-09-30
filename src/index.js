@@ -42,10 +42,13 @@ const node1 = await createNode()
 //     createNode(peerid),
 // ])
 
+console.log('before start')
 await node1.start()
+console.log('after start')
 // await Promise.all([
 //     node1.start()
 // ])
+
 
 // node1.getMultiaddrs().forEach((ma)=>console.log(`Multiaddr: ${ma}`))
 node1.addEventListener('peer:discovery', (peer) => {
